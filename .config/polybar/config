@@ -10,14 +10,13 @@ include-file = /home/julianliebl/.config/polybar/bars/top.conf
 ;=====================================================
 
 [colors]
-background = ${xrdb:color0:#222}
+background = #212121
 foreground = ${xrdb:color7:#222}
 foreground-alt = ${xrdb:color7:#222}
 primary = ${xrdb:color1:#222}
 secondary = ${xrdb:color2:#222}
 alert = ${xrdb:color3:#222}
 bg          =  ${xrdb:background}
-;bg          =  #cc2b303b
 bg-alt      =  #c5c5c5
 bg-trans    =  #e8101010
 fg          =  ${xrdb:foreground}
@@ -49,23 +48,23 @@ margin-bottom = 0
 [module/i3]
 type = internal/i3
 
-ws-icon-0 = 1: TERM;
-ws-icon-1 = 2: IDE;
-ws-icon-2 = 3: WEB;
-ws-icon-3 = 4: MSG;
-ws-icon-default = 
+ws-icon-0 = 1: TERM;
+ws-icon-1 = 2: IDE;
+ws-icon-2 = 3: WEB;
+ws-icon-3 = 4: MSG;
+ws-icon-default = 
 
 index-sort = true
 strip-wsnumbers = true
 
 label-focused = "%name% %icon%"
 label-focused-foreground = ${colors.bg}
-label-focused-background = ${colors.green}
+label-focused-background = ${colors.yellow}
 label-focused-padding = 1
 
 label-unfocused = "%name% %icon%"
 label-unfocused-padding = 1
-label-unfocused-foreground = ${colors.green-alt}
+label-unfocused-foreground = ${colors.white}
 label-unfocused-background = ${colors.bg}
 
 label-urgent = "%name% %icon%"
@@ -74,8 +73,8 @@ label-urgent-background = ${colors.bg-trans}
 label-urgent-padding = 1
 
 label-visible = "%name% %icon%"
-label-visible-foreground = ${colors.green}
-label-visible-background = ${colors.bg-trans}
+label-visible-foreground = ${colors.bg}
+label-visible-background = ${colors.bg-alt}
 label-visible-padding = 1
 
 [module/xwindow]
@@ -125,7 +124,7 @@ label-song-ellipsis = true
 type = custom/script
 interval = 60
 format = <label>
-format-prefix = "B "
+format-prefix = " "
 tail = true
 format-prefix-foreground = ${colors.fg-alt}
 exec = ~/.scripts/bitcoin-ticker.py
@@ -134,7 +133,7 @@ exec = ~/.scripts/bitcoin-ticker.py
 type = custom/script
 interval = 2
 format = "<label>"
-format-prefix = "L "
+format-prefix = " "
 format-prefix-foreground = ${colors.fg-alt}
 exec = ~/.config/polybar/light
 
@@ -150,12 +149,12 @@ label = BL
 bar-width = 10
 bar-indicator = |
 bar-indicator-foreground = #ff
-bar-indicator-font = 2
+bar-indicator-font = 0
 bar-fill = ─
-bar-fill-font = 2
+bar-fill-font = 0
 bar-fill-foreground = #9f78e1
 bar-empty = ─
-bar-empty-font = 2
+bar-empty-font = 0
 bar-empty-foreground = ${colors.fg-alt}
 
 [module/backlight-acpi]
@@ -166,7 +165,7 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = "C "
+format-prefix = " "
 format-prefix-foreground = ${colors.fg-alt}
 format-underline = #f90000
 label = %percentage%%
@@ -174,7 +173,7 @@ label = %percentage%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = "M "
+format-prefix = " "
 format-prefix-foreground = ${colors.fg-alt}
 format-underline = #4bffdc
 label = %percentage_used%%
@@ -227,7 +226,7 @@ date-alt = " %Y-%m-%d"
 time = %H:%M
 time-alt = %H:%M:%S
 
-format-prefix = 
+format-prefix = 
 format-prefix-foreground = ${colors.fg-alt}
 format-underline = #0a6cf5
 
@@ -237,13 +236,13 @@ label = %date% %time%
 type = internal/volume
 
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL
-label-volume-foreground = ${root.foreground}
-#label-volume-foreground = ${colors.fg-alt}
+label-volume = 
+#label-volume-foreground = ${root.foreground}
+label-volume-foreground = ${colors.fg-alt}
 
-format-muted-prefix = "V "
+format-muted-prefix = " "
 format-muted-foreground = ${colors.fg-alt}
-label-muted = sound muted
+label-muted = --
 label-muted-foreground = ${colors.white}
 
 
@@ -257,18 +256,18 @@ bar-volume-foreground-5 = #f5a70a
 bar-volume-foreground-6 = #ff5555
 bar-volume-gradient = false
 bar-volume-indicator = |
-bar-volume-indicator-font = 3
+bar-volume-indicator-font = 0
 bar-volume-fill = ─
-bar-volume-fill-font = 3
+bar-volume-fill-font = 0
 bar-volume-empty = ─
-bar-volume-empty-font = 3
+bar-volume-empty-font = 0
 bar-volume-empty-foreground = ${colors.fg-alt}
 
 [module/battery]
 type = internal/battery
 battery = BAT0
 adapter = AC
-full-at = 98
+full-at = 90
 
 format-charging = <animation-charging> <label-charging>
 format-charging-underline = #ffb52a
@@ -276,15 +275,15 @@ format-charging-underline = #ffb52a
 format-discharging = <ramp-capacity> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
 
-format-full-prefix = " "
+format-full-prefix = " "
 format-full-prefix-foreground = ${colors.fg-alt}
 format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
 ramp-capacity-foreground = ${colors.fg-alt}
 
 animation-charging-0 = 
