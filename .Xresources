@@ -1,0 +1,36 @@
+#include "/home/julianliebl/.xthemes/ronde"
+
+Xcursor.size: 16
+
+URxvt.transparent:       true
+URxvt.shading:           1
+URxvt.font: xft:Hack-11
+URxvt.boldFont: xft:Hack-11
+URxvt.letterSpace: 0
+
+!---- URxvt - General settings {
+URxvt*:borderLess:                    true
+URxvt*cursorBlink:                    true
+URxvt*jumpScroll:                     true
+URxvt*scrollBar:                      false
+URxvt*scrollTtyOutput:                false
+URxvt*scrollTtyKeypress:              true
+URxvt*urgentOnBell:                   false
+URxvt*visualBell:                     false
+URxvt*perl-ext-common:                default,matcher
+URxvt*urlLauncher:                    google-chrome
+URxvt*matcher.button:                 1
+
+! ------------------------------------------------------------------------------
+! ROFI Color theme
+! ------------------------------------------------------------------------------
+rofi.color-enabled: true
+!rofi.color-window: #273238, #273238, #1e2529
+!rofi.color-normal: #273238, #c1c1c1, #273238, #394249, #ffffff
+!rofi.color-active: #273238, #80cbc4, #273238, #394249, #80cbc4
+!rofi.color-urgent: #273238, #ff1844, #273238, #394249, #ff1844
+
+rofi.color-window:    base00 , base00 , base00 , base00 , base03
+rofi.color-normal:    base00 , base03 , base00 , base00 , base07
+rofi.color-active:    base03 , base0E , base00 , base0B , base00
+rofi.color-urgent:    base00 , base03 , base00 , base00 , base03
