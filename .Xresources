@@ -1,5 +1,6 @@
-#include "/home/julianliebl/.xthemes/ronde"
+#include "/home/privat/.xthemes/ronde"
 
+!Xft.dpi: 120
 Xcursor.size: 16
 
 URxvt.transparent:       false
