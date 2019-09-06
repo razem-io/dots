@@ -1,13 +1,13 @@
-#include "$HOME/.xthemes/nord"
+#include ".xthemes/nord"
 
-!Xft.dpi: 120
-Xcursor.size: 16
+!Xft.dpi: 		120
+Xcursor.size: 		16
 
-URxvt.transparent:       false
-URxvt.shading:           1
-URxvt.font: xft:Hack-12
-URxvt.boldFont: xft:Hack-12
-URxvt.letterSpace: 0
+URxvt.transparent:      false
+URxvt.shading:          1
+URxvt.font: 		xft:Hack Nerd Font-12
+URxvt.boldFont: 	xft:Hack Nerd Font-12
+URxvt.letterSpace: 	0
 
 !---- URxvt - General settings {
 URxvt*:borderLess:                    true
