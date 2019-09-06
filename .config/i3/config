@@ -38,8 +38,8 @@ bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up
 bindsym XF86AudioLowerVolume exec pulseaudio-ctl down
 bindsym XF86AudioMute exec pulseaudio-ctl mute
 
-bindsym XF86MonBrightnessUp exec light -A 1
-bindsym XF86MonBrightnessDown exec light -U 1
+bindsym XF86MonBrightnessUp exec light -A 10
+bindsym XF86MonBrightnessDown exec light -U 10
 
 #set $Locker bindsym $mod+l exec --no-startup-id
 set $Locker --no-startup-id i3lock-fancy -t "Transport Gehirn - Gesperrt"
@@ -49,6 +49,8 @@ bindsym $mod+Shift+p exec fish -c rofi-pass
 bindsym $mod+Shift+Alt+p exec gksu -u privat rofi-pass
 
 bindsym $mod+c exec python ~/.config/i3/cycle_workspace.py
+
+bindsym $mod+u exec ~/.scripts/title_format.sh
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -216,8 +218,11 @@ client.urgent             $darkblack  $darkblack   $white          $darkblack  $
 #*************  Other settings  *********************
 
 # Set per-application border
-for_window [class="^.*"] border pixel 1
-#for_window [class="(?i)urxvt"] border pixel 4
+new_window none
+new_float  none
+#for_window [class="^.*"] border pixel 0
+#for_window [class="^termite.*"] border pixel 6
+for_window [class="(?i)termite"] border pixel 8
 #for_window [class="(?i)urxvt"] border normal 0
 
 # Enable or disable floating
@@ -247,3 +252,4 @@ for_window [class="Pavucontrol"] floating enable
 #assign [class="^OWASP ZAP"]              $w8
 assign [class="^jetbrains-studio"]        $w1
 #assign [class="^Deluge"]                 $w8
+
