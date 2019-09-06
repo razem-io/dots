@@ -3,4 +3,4 @@
 # Needed for some (old) custom scripts
 yay -S --needed python2
 
-yay -S --needed nerd-fonts-hack polybar light
+yay -S --needed nerd-fonts-hack polybar light fish
