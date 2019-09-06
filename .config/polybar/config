@@ -1,4 +1,4 @@
-include-file = /home/julianliebl/.config/polybar/bars/top.conf
+include-file = ~/.config/polybar/bars/top.conf
 
 ;=====================================================
 ;
