@@ -46,14 +46,19 @@ white-alt   =  ${xrdb:color15}
 margin-top = 0
 margin-bottom = 0
 
+[module/valmob]
+type = custom/text
+content = 
+content-padding = 1
+
 [module/i3]
 type = internal/i3
 
-ws-icon-0 = 1: TERM;
-ws-icon-1 = 2: IDE;
-ws-icon-2 = 3: WEB;
-ws-icon-3 = 4: MSG;
-ws-icon-default = 
+ws-icon-0 = 1: TERM;
+ws-icon-1 = 2: IDE;
+ws-icon-2 = 3: WEB;
+ws-icon-3 = 4: MSG;
+ws-icon-default = 
 
 index-sort = true
 strip-wsnumbers = true
@@ -125,7 +130,7 @@ label-song-ellipsis = true
 type = custom/script
 interval = 60
 format = <label>
-format-prefix = " "
+format-prefix = "ﴑ "
 tail = true
 format-prefix-foreground = ${colors.fg-alt}
 exec = ~/.scripts/bitcoin-ticker.py
@@ -134,7 +139,7 @@ exec = ~/.scripts/bitcoin-ticker.py
 type = custom/script
 interval = 2
 format = "<label>"
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.fg-alt}
 exec = ~/.config/polybar/light
 
@@ -144,8 +149,10 @@ scroll-down = light -U 1
 [module/xbacklight]
 type = internal/xbacklight
 
-format = <label> <bar>
-label = BL
+format = <label>
+format-prefix = " "
+format-prefix-foreground = ${colors.fg-alt}
+label = %percentage%%
 
 bar-width = 10
 bar-indicator = |
@@ -166,7 +173,7 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " "
+format-prefix = "﬙ "
 format-prefix-foreground = ${colors.fg-alt}
 format-underline = #f90000
 label = %percentage%%
@@ -174,7 +181,7 @@ label = %percentage%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
+format-prefix = " "
 format-prefix-foreground = ${colors.fg-alt}
 format-underline = #4bffdc
 label = %percentage_used%%
@@ -243,7 +250,7 @@ label-volume-foreground = ${colors.fg-alt}
 
 format-muted-prefix = " "
 format-muted-foreground = ${colors.fg-alt}
-label-muted = --
+label-muted = 婢
 label-muted-foreground = ${colors.white}
 
 
@@ -280,11 +287,11 @@ format-full-prefix = " "
 format-full-prefix-foreground = ${colors.fg-alt}
 format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
 ramp-capacity-foreground = ${colors.fg-alt}
 
 animation-charging-0 = 

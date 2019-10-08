@@ -4,3 +4,4 @@ fundle plugin 'brgmnn/fish-docker-compose'
 fundle plugin 'tuvistavie/fish-fastdir'
 
 fundle init
+

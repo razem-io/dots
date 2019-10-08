@@ -1,5 +1,5 @@
 [options]
-font = Hack Nerd Font 12
+font = Hack Nerd Font 14
 scrollback_lines = 100000
 
 [colors]

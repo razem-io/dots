@@ -1,6 +1,13 @@
 #!/bin/bash
 
-# Needed for some (old) custom scripts
-yay -S --needed python2
+yay -S --needed --answerdiff=None --noconfirm \
+	python2 python-i3-py \
+	nerd-fonts-hack polybar xorg-xbacklight papirus-icon-theme \
+	fish fundle-git \
+        rclone \
+        xcompmgr \
+        pavucontrol pulseaudio-ctl \
+        i3lockmore
 
-yay -S --needed nerd-fonts-hack polybar light fish
+# install those plugins
+fish -c "fundle install"
