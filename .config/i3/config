@@ -18,8 +18,8 @@ exec_always xrdb ~/.Xresources
 exec --no-startup-id nm-applet
 exec --no-startup-id arandr-indicator
 exec --no-startup-id "fish -c '~/.scripts/battery_check.bash -L 20 -n'"
-exec_always --no-startup-id .scripts/startXCompMgr.bash
-exec_always --no-startup-id feh --bg-scale ~/.wallpaper.png
+exec_always --no-startup-id ~/.scripts/startCompositor.bash
+exec_always --no-startup-id feh --bg-max ~/.wallpaper.png
 exec_always --no-startup-id setxkbmap de
 exec_always --no-startup-id "fish -c 'python2 ~/.scripts/polybar-start.py'"
 
@@ -31,15 +31,15 @@ gaps inner 10
 
 bindsym $mod+w sticky toggle
 
-bindsym XF86AudioRaiseVolume exec pulseaudio-ctl up
-bindsym XF86AudioLowerVolume exec pulseaudio-ctl down
-bindsym XF86AudioMute exec pulseaudio-ctl mute
+bindsym XF86AudioRaiseVolume exec "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%"
+bindsym XF86AudioLowerVolume exec "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5%"
+bindsym XF86AudioMute exec "pactl set-sink-mute 0 toggle"
 
-bindsym XF86MonBrightnessUp exec light -A 10
-bindsym XF86MonBrightnessDown exec light -U 10
-
+bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+bindsym XF86MonBrightnessDown exec xbacklight -dec 5
 #set $Locker bindsym $mod+l exec --no-startup-id
-set $Locker --no-startup-id i3lock-fancy -t "Transport Gehirn - Gesperrt"
+#set $Locker --no-startup-id i3lock-fancy -t "Transport Gehirn - Gesperrt"
+set $Locker i3lockmore --image-fill ~/.wallpaper.lock.png --dpms 60
 bindsym $mod+l exec --no-startup-id $Locker
 
 bindsym $mod+Shift+p exec fish -c rofi-pass
@@ -51,26 +51,15 @@ bindsym $mod+u exec ~/.scripts/title_format.sh
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font Hack 8
-
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
-
-# Before i3 v4.8, we used to recommend this one as the default:
-# font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
-# The font above is very space-efficient, that is, it looks good, sharp and
-# clear in small sizes. However, its unicode glyph coverage is limited, the old
-# X core fonts rendering does not support right-to-left and this being a bitmap
-# font, it doesn’t scale on retina/hidpi displays.
+font pango:Hack Nerd Font 12
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
 # start a terminal
+#bindsym $mod+Return exec guake
 #bindsym $mod+Return exec urxvt
 bindsym $mod+Return exec termite
-#bindsym $mod+Return exec guake
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -175,51 +164,42 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Custom colors
-set_from_resource $black       color8  #000000
-set_from_resource $darkblack   color0  #000000
-set_from_resource $darkred     color1  #000000
-set_from_resource $red         color9  #000000
-set_from_resource $darkgreen   color2  #000000
-set_from_resource $green       color10 #000000
-set_from_resource $darkyellow  color3  #000000
-set_from_resource $yellow      color11 #000000
-set_from_resource $darkblue    color4  #000000
-set_from_resource $blue        color12 #000000
-set_from_resource $darkmagenta color5  #000000
-set_from_resource $magenta     color13 #000000
-set_from_resource $darkcyan    color6  #000000
-set_from_resource $cyan        color14 #000000
-set_from_resource $white       color15 #000000
-
-#set $darkblack #ddd9cd
-
-#set_from_resource $fg i3wm.color7 #f0f0f0
-#set_from_resource $bg i3wm.color2 #f0f0f0
+set $nord0   #2E3440
+set $nord1   #3B4252
+set $nord2   #434C5E
+set $nord3   #4C566A
+set $nord4   #D8DEE9
+set $nord5   #E5E9F0
+set $nord6   #ECEFF4
+set $nord7   #8FBCBB
+set $nord8   #88C0D0
+set $nord9   #81A1C1
+set $nord10  #5E81AC
+set $nord11  #BF616A
+set $nord12  #D08770
+set $nord13  #EBCB8B
+set $nord14  #A3BE8C
+set $nord15  #B48EAD
 
 # Window colors           border      background   text            indicator    child_border
-client.focused            $green      $orange      $darkblack      $darkblack  $darkblack
-client.focused_inactive   $darkblack  $darkblack   $white          $darkblack  $darkblack
-client.unfocused          $darkblack  $darkblack   $white          $darkblack  $darkblack
-client.urgent             $darkblack  $darkblack   $white          $darkblack  $darkblack
-
-
-# class                 border  backgr. text indicator child_border
-#client.focused          $bg     $bg     $fg  $bg       $bg
-#client.focused_inactive $bg     $bg     $fg  $bg       $bg
-#client.unfocused        $bg     $bg     $fg  $bg       $bg
-#client.urgent           $bg     $bg     $fg  $bg       $bg
-#client.placeholder      $bg     $bg     $fg  $bg       $bg
-
-#client.background       $bg
+client.focused            $nord14   $nord14   $nord0          $nord14  $nord14
+client.focused_inactive   $nord2   $nord2    $nord4          $nord2  $nord2
+client.unfocused          $nord1   $nord1    $nord4          $nord1  $nord1
+client.urgent             $nord11   $nord11    $nord4          $nord11  $nord11
 
 #*************  Other settings  *********************
 
 # Set per-application border
 new_window none
 new_float  none
-#for_window [class="^.*"] border pixel 0
+default_border pixel 6
+for_window [class=".*"] title_format " 类 %title"
 #for_window [class="^termite.*"] border pixel 6
-for_window [class="(?i)termite"] border pixel 8
+#for_window [class="(?i)termite"] border pixel 6
+for_window [class="(?i)termite"] title_format "  %title"
+for_window [class="(?i)chrome"] title_format "  %title"
+for_window [class="(?i)idea"] title_format "  %title"
+for_window [class="(?i)code"] title_format "  %title"
 #for_window [class="(?i)urxvt"] border normal 0
 
 # Enable or disable floating
@@ -233,7 +213,6 @@ for_window [window_role="Preferences"] floating enable
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
 for_window [class="Pavucontrol"] floating enable
-#for_window [class="^.*"] floating enable
 
 # Starting apps on a specific workspace
 #assign [class="^Tor Browser$"]           $w1
@@ -247,6 +226,6 @@ for_window [class="Pavucontrol"] floating enable
 #assign [class="^Pcmanfm"]                $w8
 #assign [class="^burp-StartBurp"]         $w8
 #assign [class="^OWASP ZAP"]              $w8
-assign [class="^jetbrains-studio"]        $w1
+#assign [class="^jetbrains-studio"]        $w1
 #assign [class="^Deluge"]                 $w8
 
