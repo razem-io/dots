@@ -7,7 +7,9 @@ yay -S --needed --answerdiff=None --noconfirm \
         rclone \
         xcompmgr \
         pavucontrol pulseaudio-ctl \
-        i3lockmore
+        i3lockmore \
+        arandr arandr-indicator \
+	network-manager-applet networkmanager
 
 # install those plugins
 fish -c "fundle install"
