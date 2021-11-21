@@ -15,9 +15,6 @@ set $mod Mod4
 # AUTOSTART
 ####
 exec_always xrdb ~/.Xresources
-exec --no-startup-id nm-applet
-exec --no-startup-id arandr-indicator
-exec --no-startup-id "fish -c '~/.scripts/battery_check.bash -L 20 -n'"
 exec_always --no-startup-id ~/.scripts/startCompositor.bash
 exec_always --no-startup-id feh --bg-max ~/.wallpaper.png
 exec_always --no-startup-id setxkbmap de
