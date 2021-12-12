@@ -7,7 +7,7 @@ yay -S --needed --answerdiff=None --noconfirm \
 	termite tmux \
 	fish fundle-git \
         rclone \
-        rofi htop nano \
+        rofi htop nano firefox \
 	openssh \
         pavucontrol pulseaudio-ctl \
 	network-manager-applet networkmanager \
