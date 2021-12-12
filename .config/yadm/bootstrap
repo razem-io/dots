@@ -10,8 +10,6 @@ yay -S --needed --answerdiff=None --noconfirm \
         rofi htop \
 	openssh \
         pavucontrol pulseaudio-ctl \
-        i3lockmore \
-        arandr arandr-indicator \
 	network-manager-applet networkmanager \
 	git \
         net-tools \
