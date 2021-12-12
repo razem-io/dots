@@ -18,7 +18,10 @@ yay -S --needed --answerdiff=None --noconfirm \
         xorg-apps \
         xorg-server-xvfb \
         xorg-xinit \
-	xrdp xorgxrdp
+	xrdp xorgxrdp \
+	archur
 
 # install those plugins
 fish -c "fundle install"
+
+archur -o ~/.wallpaper.png -t black --text $HOSTNAME
