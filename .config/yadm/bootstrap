@@ -17,7 +17,8 @@ yay -S --needed --answerdiff=None --noconfirm \
         xorg-server \
         xorg-apps \
         xorg-server-xvfb \
-        xorg-xinit
+        xorg-xinit \
+	xrdp xorgxrdp
 
 # install those plugins
 fish -c "fundle install"
