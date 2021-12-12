@@ -1,15 +1,24 @@
 #!/bin/bash
 
 yay -S --needed --answerdiff=None --noconfirm \
-	python2 python-i3-py \
-	nerd-fonts-hack polybar xorg-xbacklight papirus-icon-theme \
+	python2 python3 python-i3-py \
+	nerd-fonts-hack polybar papirus-icon-theme \
+	picom i3-gaps feh toilet \
 	fish fundle-git \
         rclone \
-        xcompmgr \
+        rofi htop \
+	openssh \
         pavucontrol pulseaudio-ctl \
         i3lockmore \
         arandr arandr-indicator \
-	network-manager-applet networkmanager
+	network-manager-applet networkmanager \
+	git \
+        net-tools \
+        ttf-dejavu \
+        xorg-server \
+        xorg-apps \
+        xorg-server-xvfb \
+        xorg-xinit
 
 # install those plugins
 fish -c "fundle install"
