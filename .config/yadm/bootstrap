@@ -4,7 +4,7 @@ yay -S --needed --answerdiff=None --noconfirm \
 	python2 python3 python-i3-py \
 	nerd-fonts-hack polybar papirus-icon-theme \
 	picom i3-gaps feh toilet \
-	termite tmux \
+	alacritty tmux \
 	fish fundle-git \
         rclone \
         rofi htop nano firefox \
