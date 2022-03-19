@@ -16,9 +16,8 @@ set $mod Mod4
 ####
 exec_always xrdb ~/.Xresources
 exec_always --no-startup-id ~/.scripts/startCompositor.bash
-exec_always --no-startup-id feh --bg-max ~/.wallpaper.png
+exec_always --no-startup-id feh --bg-scale ~/.wallpaper.png
 exec_always --no-startup-id setxkbmap de
-exec_always --no-startup-id "fish -c 'python2 ~/.scripts/polybar-start.py'"
 
 
 ####
