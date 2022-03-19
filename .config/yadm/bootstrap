@@ -1,27 +1,19 @@
 #!/bin/bash
 
-yay -S --needed --answerdiff=None --noconfirm \
-	python2 python3 python-i3-py \
-	nerd-fonts-hack polybar papirus-icon-theme \
-	picom i3-gaps feh toilet \
-	alacritty tmux \
-	fish fundle-git \
-        rclone \
-        rofi htop nano firefox \
-	openssh \
-        pavucontrol pulseaudio-ctl \
-	network-manager-applet networkmanager \
-	git \
-        net-tools \
-        ttf-dejavu \
-        xorg-server \
-        xorg-apps \
-        xorg-server-xvfb \
-        xorg-xinit \
-	xrdp xorgxrdp \
-	archur
+yay -Syu --removemake --needed --noprogressbar --noconfirm \
+    exa nano openssh wget rsync htop \
+    xorg-server xorg-apps xorg-xinit xrdp xorgxrdp \
+    yadm \
+    i3-gaps i3status-rust kitty picom feh \
+    nerd-fonts-hack ttf-font-awesome-5 papirus-icon-theme nordic-wallpapers \
+    fish fundle-git \
+    firefox \
+    nnn ueberzug imagemagic  \
+    rofi toilet  \
+    tmux 
 
 # install those plugins
 fish -c "fundle install"
+ln -s /usr/share/backgrounds/nordic-wallpapers/mountain_jaws.jpg /home/vagrant/.wallpaper.png
 
-archur -o ~/.wallpaper.png -t black --text $HOSTNAME
+
