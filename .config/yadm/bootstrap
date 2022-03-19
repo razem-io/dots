@@ -8,7 +8,7 @@ yay -Syu --removemake --needed --noprogressbar --noconfirm \
     nerd-fonts-hack ttf-font-awesome-5 papirus-icon-theme nordic-wallpapers \
     fish fundle-git \
     firefox \
-    nnn ueberzug imagemagic  \
+    nnn ueberzug imagemagik  \
     rofi toilet  \
     tmux 
 
