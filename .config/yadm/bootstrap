@@ -14,6 +14,6 @@ yay -Syu --removemake --needed --noprogressbar --noconfirm \
 
 # install those plugins
 fish -c "fundle install"
-ln -s /usr/share/backgrounds/nordic-wallpapers/mountain_jaws.jpg /home/vagrant/.wallpaper.png
+ln -s /usr/share/backgrounds/nordic-wallpapers/mountain_jaws.jpg ~/.wallpaper.png
 
 
