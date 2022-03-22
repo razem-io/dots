@@ -2,6 +2,11 @@ theme = "nord-dark"
 icons = "material-nf"
 
 [[block]]
+block = "custom"
+command = ''' python3 ~/.scripts/bitcoin-ticker.py '''
+interval = 60
+
+[[block]]
 block = "disk_space"
 path = "/"
 alias = "/"
