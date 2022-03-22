@@ -24,7 +24,9 @@ exec_always --no-startup-id setxkbmap de
 # CUSTOM CONFIG
 ####
 gaps inner 10
+smart_gaps on
 
+bindsym $mod+m move workspace to output left
 bindsym $mod+w sticky toggle
 
 bindsym XF86AudioRaiseVolume exec "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%"
@@ -108,7 +110,7 @@ bindsym $mod+space focus mode_toggle
 # focus the child container
 #bindsym $mod+d focus child
 
-# switch to workspace
+# switch to wormkspace
 bindsym $mod+1 workspace 1: TERM
 bindsym $mod+2 workspace 2: IDE
 bindsym $mod+3 workspace 3: WEB
@@ -228,16 +230,16 @@ for_window [class="Pavucontrol"] floating enable
 
 
 bar {
-    font pango:DejaVu Sans Mono, FontAwesome 12
+    font pango:Hack Nerd Font 12
     position top
     status_command i3status-rs ~/.config/i3status-rust/config.toml
     colors {
         separator #666666
-        background #222222
+        background #2E3440
         statusline #dddddd
-        focused_workspace #0088CC #0088CC #ffffff
-        active_workspace #333333 #333333 #ffffff
-        inactive_workspace #333333 #333333 #888888
-        urgent_workspace #2f343a #900000 #ffffff
+        focused_workspace #EBCB8B #EBCB8B #2E3440
+        active_workspace #A3BE8C #A3BE8C #2E3440
+        inactive_workspace #ECEFF4 #ECEFF4 #4C566A
+        urgent_workspace #BF616A #BF616A #2E3440
     }
 }
