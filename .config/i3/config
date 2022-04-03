@@ -33,8 +33,14 @@ bindsym XF86AudioRaiseVolume exec "pactl set-sink-mute 0 false ; pactl set-sink-
 bindsym XF86AudioLowerVolume exec "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5%"
 bindsym XF86AudioMute exec "pactl set-sink-mute 0 toggle"
 
-bindsym XF86MonBrightnessUp exec xbacklight -inc 5
-bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+# If xbacklight works
+#bindsym XF86MonBrightnessUp exec xbacklight -inc 5
+#bindsym XF86MonBrightnessDown exec xbacklight -dec 5
+
+# clightd
+bindsym XF86MonBrightnessUp exec "busctl --expect-reply=false --user call org.clight.clight /org/clight/clight org.clight.clight IncBl 'd' 0.02"
+bindsym XF86MonBrightnessDown exec "busctl --expect-reply=false --user call org.clight.clight /org/clight/clight org.clight.clight DecBl 'd' 0.02"
+
 #set $Locker bindsym $mod+l exec --no-startup-id
 #set $Locker --no-startup-id i3lock-fancy -t "Transport Gehirn - Gesperrt"
 set $Locker i3lockmore --image-fill ~/.wallpaper.lock.png --dpms 60
