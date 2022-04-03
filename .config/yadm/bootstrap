@@ -1,16 +1,27 @@
 #!/bin/bash
 
+# universal
 yay -Syu --removemake --needed --noprogressbar --noconfirm \
     exa nano openssh wget rsync htop \
     xorg-server xorg-apps xorg-xinit xrdp xorgxrdp \
     yadm \
     i3-gaps i3status-rust kitty picom feh \
-    nerd-fonts-hack ttf-font-awesome-5 papirus-icon-theme nordic-wallpapers \
+    nerd-fonts-hack ttf-font-awesome-5 papirus-icon-theme nordic-theme nordic-wallpapers \
     fish fundle-git \
     firefox \
     nnn ueberzug imagemagick  \
-    rofi toilet  \
+    rofi toilet \
     tmux 
+
+# multimedia
+yay -Syu --removemake --needed --noprogressbar --noconfirm \
+    pulseaudio pavucontrol pasystray
+
+# laptop
+yay -Syu --removemake --needed --noprogressbar --noconfirm \
+    networkmanager network-manager-applet \
+    clight clightd
+
 
 # install those plugins
 fish -c "fundle install"
