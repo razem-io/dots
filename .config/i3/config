@@ -28,6 +28,8 @@ smart_gaps on
 
 bindsym $mod+m move workspace to output left
 bindsym $mod+w sticky toggle
+bindsym $mod+p autorandr --change
+
 
 bindsym XF86AudioRaiseVolume exec "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%"
 bindsym XF86AudioLowerVolume exec "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -5%"

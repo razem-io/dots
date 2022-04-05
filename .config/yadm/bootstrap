@@ -20,7 +20,8 @@ yay -Syu --removemake --needed --noprogressbar --noconfirm \
 # laptop
 yay -Syu --removemake --needed --noprogressbar --noconfirm \
     networkmanager network-manager-applet \
-    clight clightd
+    clight clightd \
+    autorandr
 
 
 # install those plugins
