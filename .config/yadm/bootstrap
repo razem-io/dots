@@ -1,17 +1,25 @@
 #!/bin/bash
+set -e
 
 # universal
 yay -Syu --removemake --needed --noprogressbar --noconfirm \
-    exa nano openssh wget rsync htop \
-    xorg-server xorg-apps xorg-xinit xrdp xorgxrdp \
+    lsd nano openssh wget rsync htop \
+    xorg-server xorg-apps xorg-xinit arandr \
     yadm \
     i3-gaps i3status-rust kitty picom feh \
     nerd-fonts-hack ttf-font-awesome-5 papirus-icon-theme nordic-theme nordic-wallpapers \
     fish fundle-git \
     firefox \
-    nnn ueberzug imagemagick  \
+    nnn-nerd bat ueberzug imagemagick  \
     rofi toilet \
-    tmux 
+    tmux \
+    i3lockmore \
+    lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings \
+    ttf-dejavu ttf-liberation noto-fonts
+
+# nnn
+curl -Ls https://raw.githubusercontent.com/jarun/nnn/master/plugins/getplugs | sh
+
 
 # multimedia
 yay -Syu --removemake --needed --noprogressbar --noconfirm \
@@ -20,12 +28,16 @@ yay -Syu --removemake --needed --noprogressbar --noconfirm \
 # laptop
 yay -Syu --removemake --needed --noprogressbar --noconfirm \
     networkmanager network-manager-applet \
-    clight clightd \
+    acpilight \
     autorandr
+
 
 
 # install those plugins
 fish -c "fundle install"
 ln -s /usr/share/backgrounds/nordic-wallpapers/mountain_jaws.jpg ~/.wallpaper.png
+
+
+
 
 

@@ -14,10 +14,13 @@ set $mod Mod4
 ####
 # AUTOSTART
 ####
-exec_always xrdb ~/.Xresources
+exec_always --no-startup-id xrdb ~/.Xresources
 exec_always --no-startup-id ~/.scripts/startCompositor.bash
 exec_always --no-startup-id feh --bg-scale ~/.wallpaper.png
 exec_always --no-startup-id setxkbmap de
+exec --no-startup-id nm-applet
+exec --no-startup-id pasystray
+exec --no-startup-id dunst
 
 
 ####
@@ -28,7 +31,7 @@ smart_gaps on
 
 bindsym $mod+m move workspace to output left
 bindsym $mod+w sticky toggle
-bindsym $mod+p autorandr --change
+bindsym $mod+p exec "autorandr --change"
 
 
 bindsym XF86AudioRaiseVolume exec "pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +5%"
@@ -45,7 +48,7 @@ bindsym XF86MonBrightnessDown exec "busctl --expect-reply=false --user call org.
 
 #set $Locker bindsym $mod+l exec --no-startup-id
 #set $Locker --no-startup-id i3lock-fancy -t "Transport Gehirn - Gesperrt"
-set $Locker i3lockmore --image-fill ~/.wallpaper.lock.png --dpms 60
+set $Locker i3lockmore --image-fill ~/.wallpaper.png --dpms 60
 bindsym $mod+l exec --no-startup-id $Locker
 
 bindsym $mod+Shift+p exec fish -c rofi-pass

@@ -10,4 +10,3 @@ PS1='[\u@\h \W]\$ '
 # nnn
 export NNN_PLUG='p:preview-tui'
 
-exec fish
